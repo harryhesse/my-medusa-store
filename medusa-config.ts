@@ -11,9 +11,11 @@ module.exports = defineConfig({
       | "worker"
       | "server",
     http: {
-      storeCors: process.env.STORE_CORS!,
-      adminCors: process.env.ADMIN_CORS!,
-      authCors: process.env.AUTH_CORS!,
+      storeCors:
+        process.env.STORE_CORS || "http://localhost:8000,http://localhost:3000",
+      adminCors:
+        process.env.ADMIN_CORS || "http://localhost:8001,http://localhost:7000",
+      authCors: process.env.AUTH_CORS || "http://localhost:9000",
       jwtSecret: process.env.JWT_SECRET || "supersecret",
       cookieSecret: process.env.COOKIE_SECRET || "supersecret",
     },
