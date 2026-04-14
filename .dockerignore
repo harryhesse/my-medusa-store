@@ -1,4 +1,8 @@
 node_modules
+.medusa
 dist
 build
 .git
+.gitignore
+npm-debug.log
+*.log
